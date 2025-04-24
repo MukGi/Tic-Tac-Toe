@@ -1,7 +1,7 @@
-let gameBoard = [['','',''],
+let _2DgameBoard = [['','',''],
                  ['','',''],
                  ['','',''],]
-let gameBoard2 = ['','','',
+let _1DgameBoard = ['','','',
                   '','','',
                   '','','',
 ]
@@ -44,8 +44,8 @@ function checkPlayerTurn() {
 function play(row,col){
     checkPlayerTurn()
     if (player1 == true) {
-        if (gameBoard[row][col]==='') {
-               gameBoard[row][col] = 'X'
+        if (_2DgameBoard[row][col]==='') {
+               _2DgameBoard[row][col] = 'X'
 
            }
            player1 = false
@@ -54,8 +54,8 @@ function play(row,col){
     console.log('check')
     
     if(player2 == true){
-               if (gameBoard[row][col]==='') {
-                   gameBoard[row][col] = 'O'
+               if (_2DgameBoard[row][col]==='') {
+                   _2DgameBoard[row][col] = 'O'
            
                    player2 = false
                    player1 = true
@@ -64,7 +64,7 @@ function play(row,col){
            }
        
     
-    console.log(gameBoard)
+    console.log(_2DgameBoard)
 
 }
 
@@ -81,7 +81,7 @@ function winCheck() {
     for(i=1; i<=winCons.length; i++){
         console.log(`Wh: ${i}`)
         winCons[i].forEach((con)=>{
-            console.log(gameBoard2[con])
+            console.log(_1DgameBoard[con])
         })
         
     }
@@ -92,11 +92,11 @@ function changePlayer(){
 currentPlayer = (currentPlayer == Player1)? Player2: Player1
 }
 function play(pos) {
-    if(gameBoard2[pos]===''){
-        gameBoard2[pos]=currentPlayer
+    if(_1DgameBoard[pos]===''){
+        _1DgameBoard[pos]=currentPlayer
 
         changePlayer()
     }
 
-    console.log(gameBoard2)
+    console.log(_1DgameBoard)
 }
